@@ -1,0 +1,307 @@
+Comida,Calorias,Tipo
+Aceitunas negras,349,Verdura
+Aceitunas verdes,132,Verdura
+Acelgas,33,Verdura
+Ajos,169,Verdura
+Alcachofas,64,Verdura
+Apio,20,Verdura
+Berenjena,29,Verdura
+Berros,21,Verdura
+Br�coli,31,Verdura
+Calabac�n,31,Verdura
+Calabaza,24,Verdura
+Cebolla,47,Verdura
+Cebolla tierna,39,Verdura
+Champi��n y otras setas,28,Verdura
+Col,28,Verdura
+Col de Bruselas,54,Verdura
+Coliflor,30,Verdura
+Endibia,22,Verdura
+Escarola,37,Verdura
+Esp�rragos,26,Verdura
+Esp�rragos en lata,24,Verdura
+Espinaca,32,Verdura
+Espinacas congeladas,25,Verdura
+Habas tiernas,64,Verdura
+Hinojo,16,Verdura
+Lechuga,18,Verdura
+Nabos,29,Verdura
+Papas cocidas,86,Verdura
+Pepino,12,Verdura
+Perejil,55,Verdura
+Pimiento,22,Verdura
+Porotos verdes,21,Verdura
+Puerros,42,Verdura
+R�banos,20,Verdura
+Remolacha,40,Verdura
+Repollo,19,Verdura
+R�cula,37,Verdura
+"Soja, Brotes de",50,Verdura
+Tomate triturado en conserva,39,Verdura
+Tomates,22,Verdura
+Trufa,92,Verdura
+Zanahoria,42,Verdura
+Zumo de tomate,21,Verdura
+Ar�ndanos,41,Fruta
+Caqui,64,Fruta
+Cereza,47,Fruta
+Chirimoya,78,Fruta
+Ciruela,44,Fruta
+Ciruela seca,290,Fruta
+Coco,646,Fruta
+D�til,279,Fruta
+D�til seco,306,Fruta
+Frambuesa,40,Fruta
+Fresas,36,Fruta
+Granada,65,Fruta
+Grosella,37,Fruta
+Higos,80,Fruta
+Higos secos,275,Fruta
+Kiwi,51,Fruta
+Lim�n,39,Fruta
+Mandarina,40,Fruta
+Mango,57,Fruta
+Manzana,52,Fruta
+Mel�n,31,Fruta
+Mora,37,Fruta
+Naranja,44,Fruta
+Nectarina,64,Fruta
+N�speros,97,Fruta
+Papaya,45,Fruta
+Pera,61,Fruta
+Pi�a,51,Fruta
+Pi�a en alm�bar,84,Fruta
+Pl�tano,90,Fruta
+Pomelo,30,Fruta
+Sand�a,30,Fruta
+Uva,81,Fruta
+Uva pasa,324,Fruta
+Zumo de fruta,45,Fruta
+Zumo de Naranja,42,Fruta
+Almendras,620,Frutos
+Avellanas,675,Frutos
+Casta�as,199,Frutos
+Man�,560,Frutos
+Nueces,660,Frutos
+Pi�ones,660,Frutos
+Pistacho,581,Frutos
+Cuajada,92,Lacteos
+Flan de huevo,126,Lacteos
+Flan de vainilla,102,Lacteos
+Helados l�cteos,167,Lacteos
+Leche condensada c/az�car,350,Lacteos
+Leche condensada s/az�car,160,Lacteos
+Leche de cabra,72,Lacteos
+Leche de oveja,96,Lacteos
+Leche descremada,36,Lacteos
+Leche en polvo descremada,373,Lacteos
+Leche en polvo entera,500,Lacteos
+Leche entera,68,Lacteos
+Leche semi descremada,49,Lacteos
+Mousse,177,Lacteos
+Nata o crema de leche,298,Lacteos
+Queso blanco desnatado,70,Lacteos
+Queso Brie,263,Lacteos
+Queso cammembert,312,Lacteos
+Queso cheddar,381,Lacteos
+Queso crema,245,Lacteos
+Queso de bola,349,Lacteos
+Queso de Burgos,174,Lacteos
+Queso de oveja,245,Lacteos
+Queso edam,306,Lacteos
+Queso emmental,415,Lacteos
+Queso fundido untable,285,Lacteos
+Queso gruyere,391,Lacteos
+Queso manchego,376,Lacteos
+Queso mozzarella,245,Lacteos
+Queso parmesano,393,Lacteos
+Queso ricota,400,Lacteos
+Queso roquefort,405,Lacteos
+Reques�n,96,Lacteos
+Yogur desnatado,45,Lacteos
+Yogur desnatado con frutas,82,Lacteos
+Yogur enriquecido con nata,65,Lacteos
+Yogur natural,62,Lacteos
+Yogur natural con fruta,100,Lacteos
+Bacon�(Panceta ahumada),665,Proteina
+Butifarra cocida,390,Proteina
+"Butifarra, salchicha fresca",326,Proteina
+Cabrito,127,Proteina
+"Cerdo, chuleta",330,Proteina
+"Cerdo, h�gado",153,Proteina
+"Cerdo, lomo",208,Proteina
+Chicharr�n,601,Proteina
+Chorizo,468,Proteina
+Ciervo,120,Proteina
+Codorniz y perdiz,114,Proteina
+"Conejo, liebre",162,Proteina
+Cordero lech�n,105,Proteina
+Cordero pierna,98,Proteina
+"Cordero, costillas",215,Proteina
+"Cordero, h�gado",132,Proteina
+Fais�n,144,Proteina
+Foie-Gras,518,Proteina
+Gallina,369,Proteina
+Hamburguesa,230,Proteina
+Jabal�,107,Proteina
+Jam�n,380,Proteina
+Jam�n cocido,126,Proteina
+Jam�n crudo,296,Proteina
+Jam�n York,289,Proteina
+Lengua de vaca,191,Proteina
+Lomo embuchado,380,Proteina
+Mortadela,265,Proteina
+Pato,200,Proteina
+"Pavo, Muslo",186,Proteina
+"Pavo, Pechuga",134,Proteina
+Perdiz,120,Proteina
+Pies de cerdo,290,Proteina
+"Pollo, H�gado",129,Proteina
+"Pollo, Muslo",186,Proteina
+Pollo,134,Proteina
+Salami,325,Proteina
+Salchicha Frankfurt,315,Proteina
+Salchich�n,294,Proteina
+Ternera,181,Proteina
+"Ternera, chuleta",168,Proteina
+"Ternera, h�gado",140,Proteina
+"Ternera, lengua",207,Proteina
+"Ternera, ri��n",86,Proteina
+"Ternera, sesos",125,Proteina
+"Ternera, solomillo",290,Proteina
+Tira de asado,401,Proteina
+Tripas,100,Proteina
+"Vacuno, H�gado",129,Proteina
+Almejas,50,Mariscos
+Anchoas,175,Mariscos
+Anguilas,200,Mariscos
+At�n en lata con aceite vegetal,280,Mariscos
+At�n en lata con agua,127,Mariscos
+At�n fresco,225,Mariscos
+Bacalao fresco,74,Mariscos
+Bacalao seco,322,Mariscos
+Besugo,118,Mariscos
+Caballa,153,Mariscos
+Calamar,82,Mariscos
+Cangrejo,85,Mariscos
+Caviar,233,Mariscos
+Congrio,112,Mariscos
+Dorada,80,Mariscos
+Gallo,73,Mariscos
+Gambas,96,Mariscos
+Langosta,67,Mariscos
+Langostino,96,Mariscos
+Lenguado,73,Mariscos
+Lubina,118,Mariscos
+Lucio,81,Mariscos
+Mejill�n,74,Mariscos
+Merluza,86,Mariscos
+Mero,118,Mariscos
+Ostras,80,Mariscos
+Pejerrey,87,Mariscos
+Pez espada,109,Mariscos
+Pulpo,57,Mariscos
+Rodaballo,81,Mariscos
+Salm�n,172,Mariscos
+Salm�n ahumado,154,Mariscos
+Salmonete,97,Mariscos
+Sardina en lata con aceite vegetal,192,Mariscos
+Sardinas,151,Mariscos
+Trucha,94,Mariscos
+Az�car,380,Azucares
+Cacao en polvo con az�car instant�neo,366,Azucares
+Caramelos,378,Azucares
+Chocolate con leche,550,Azucares
+Chocolate sin leche,530,Azucares
+Crema chocolate con avellanas,549,Azucares
+Dulce de membrillo,215,Azucares
+Helados de agua,139,Azucares
+Mermeladas con az�car,280,Azucares
+Mermeladas sin az�car,145,Azucares
+Miel,300,Azucares
+Arroz blanco,354,Cereales
+Arroz integral,350,Cereales
+Avena,367,Cereales
+Cebada,373,Cereales
+Centeno,350,Cereales
+Cereales con chocolate,358,Cereales
+"Cereales desayuno, con miel",386,Cereales
+Copos de ma�z,350,Cereales
+Harina de ma�z,349,Cereales
+Harina de trigo integral,340,Cereales
+Harina de trigo refinada,353,Cereales
+Pan de centeno,241,Cereales
+Pan de trigo blanco,255,Cereales
+Pan de trigo integral,239,Cereales
+Pan de trigo molde blanco,233,Cereales
+Pan de trigo molde integral,216,Cereales
+Pasta al huevo,368,Cereales
+Pasta de s�mola,361,Cereales
+Polenta,358,Cereales
+S�mola de trigo,368,Cereales
+Yuca,338,Cereales
+Garbanzos,361,Legumbres
+Jud�as,343,Legumbres
+Lentejas,336,Legumbres
+Clara,48,Huevos
+Huevo duro,147,Huevos
+Huevo entero,162,Huevos
+Yema,368,Huevos
+Bizcocho,456,Pasteleria
+Croissant chocolate,469,Pasteleria
+"Croissant, donut",456,Pasteleria
+Galletas de chocolate,524,Pasteleria
+Galletas de mantequilla tipo �Danesas�,397,Pasteleria
+Galletas saladas,464,Pasteleria
+Magdalenas,469,Pasteleria
+Pasta de hojaldre cocida,565,Pasteleria
+Pastel de manzana,311,Pasteleria
+"Pastel de manzana, masa hojaldre",456,Pasteleria
+Pastel de queso,414,Pasteleria
+Agua ardiente,280,Bebidas
+Agua t�nica,34,Bebidas
+An�s,312,Bebidas
+Batido l�cteo de cacao,100,Bebidas
+Cacao en polvo sin az�car a la taza,439,Bebidas
+Caf�,1,Bebidas
+Cerveza negra,37,Bebidas
+Cerveza rubia,45,Bebidas
+Champa�a demi-sec,90,Bebidas
+Champa�a dulce,118,Bebidas
+Champa�a seca,85,Bebidas
+"Co�ac, brandy",243,Bebidas
+Crema de cacao,260,Bebidas
+Daiquiri,122,Bebidas
+Gin & T�nica,76,Bebidas
+Ginebra,244,Bebidas
+Leche de almendras,335,Bebidas
+Licor de ca�a,273,Bebidas
+Pi�a colada,194,Bebidas
+Pisco,210,Bebidas
+Refrescos carbonatados,48,Bebidas
+Ron,244,Bebidas
+Sidra dulce,33,Bebidas
+Sidra seca,35,Bebidas
+T�,1,Bebidas
+Vermouth amargo,112,Bebidas
+Vermouth dulce,160,Bebidas
+Vino de mesa,70,Bebidas
+"Vino dulce, jerez",160,Bebidas
+Vino oporto,160,Bebidas
+Vodka,315,Bebidas
+Whisky,244,Bebidas
+Aceite de girasol,900,Aceites
+Aceite de oliva,900,Aceites
+Manteca,670,Aceites
+Mantequilla,752,Aceites
+Margarina vegetal,752,Aceites
+Bechamel,115,Condimentos
+Caldos concentrados,259,Condimentos
+Ketchup,98,Condimentos
+Mayonesa,718,Condimentos
+Mayonesa light,374,Condimentos
+Mostaza,15,Condimentos
+Salsa de soja,61,Condimentos
+Salsa de tomate en conserva,86,Condimentos
+Sofrito,116,Condimentos
+Vinagres,8,Condimentos

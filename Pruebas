@@ -1,0 +1,162 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class DietaGenerator {
+    private Map<String, Map<String, Integer>> alimentosPorTipo;
+    private Scanner scanner;
+
+    public DietaGenerator() {
+        alimentosPorTipo = new HashMap<>();
+        scanner = new Scanner(System.in);
+    }
+
+    public void consultarAlimentosPorTipo() {
+        cargarAlimentosDesdeCSV();
+
+        while (true) {
+            System.out.println("Tipos de Alimentos Disponibles:");
+            for (String tipo : alimentosPorTipo.keySet()) {
+                System.out.println(tipo);
+            }
+
+            System.out.print("Elija un tipo de alimento (o 'regresar' para volver al menú principal): ");
+            String tipoElegido = scanner.nextLine();
+
+            if (tipoElegido.equalsIgnoreCase("regresar")) {
+                break; // Regresar al menú principal
+            }
+
+            if (alimentosPorTipo.containsKey(tipoElegido)) {
+                System.out.println("Alimentos de tipo " + tipoElegido + ":");
+                Map<String, Integer> alimentos = alimentosPorTipo.get(tipoElegido);
+                for (Map.Entry<String, Integer> entry : alimentos.entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue() + " calorias");
+                }
+            } else {
+                System.out.println("Tipo de alimento no encontrado.");
+            }
+        }
+    }
+
+    private void cargarAlimentosDesdeCSV() {
+        alimentosPorTipo.clear();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("alimentos.csv"))) {
+            String line;
+            reader.readLine(); // Leer la primera línea (encabezados) y descartarla
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 3) {
+                    String nombre = parts[0].trim();
+                    String tipo = parts[2].trim();
+                    int calorias = Integer.parseInt(parts[1].trim());
+                    alimentosPorTipo.putIfAbsent(tipo, new HashMap<>());
+                    alimentosPorTipo.get(tipo).put(nombre, calorias);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void ejecutar() {
+        System.out.println("Bienvenido al Generador de Dietas");
+        consultarAlimentosPorTipo();
+    }
+}
+import java.util.Scanner;
+
+public class TerminalApp {
+    private Cuenta cuenta;
+    private Scanner scanner;
+
+    public TerminalApp() {
+        cuenta = new Cuenta("usuarios.csv"); // Reemplaza "usuarios.csv" con el nombre de tu archivo CSV
+        scanner = new Scanner(System.in);
+    }
+
+    public void run() {
+        System.out.println("Bienvenido al Sistema de Registro e Inicio de Sesión");
+        while (true) {
+            System.out.println("1. Registrarse");
+            System.out.println("2. Iniciar Sesión");
+            System.out.println("3. Salir");
+            System.out.print("Elija una opción: ");
+
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Consumir la nueva línea
+
+            switch (opcion) {
+                case 1:
+                    registrarUsuario();
+                    break;
+                case 2:
+                    iniciarSesion();
+                    break;
+                case 3:
+                    System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
+                    return;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+                    break;
+            }
+        }
+    }
+
+    private void registrarUsuario() {
+        System.out.println("Registro de Usuario");
+        System.out.print("Nombre de Usuario: ");
+        String nombreUsuario = scanner.nextLine();
+        System.out.print("Contraseña: ");
+        String contraseña = scanner.nextLine();
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Edad: ");
+        int edad = scanner.nextInt();
+        scanner.nextLine(); // Consumir la nueva línea
+        System.out.print("Peso (kg): ");
+        double peso = scanner.nextDouble();
+        scanner.nextLine(); // Consumir la nueva línea
+        System.out.print("Altura (cm): ");
+        double altura = scanner.nextDouble();
+        scanner.nextLine(); // Consumir la nueva línea
+        System.out.print("Objetivo (subir/bajar/mantener): ");
+        String objetivo = scanner.nextLine();
+
+        boolean registroExitoso = cuenta.registrarUsuario(nombreUsuario, contraseña, nombre, edad, peso, altura, objetivo);
+
+        if (registroExitoso) {
+            System.out.println("Registro exitoso");
+        } else {
+            System.out.println("El nombre de usuario ya está en uso");
+        }
+    }
+
+    private void iniciarSesion() {
+        System.out.println("Inicio de Sesión");
+        System.out.print("Nombre de Usuario: ");
+        String nombreUsuario = scanner.nextLine();
+        System.out.print("Contraseña: ");
+        String contraseña = scanner.nextLine();
+
+        boolean inicioSesionExitoso = cuenta.iniciarSesion(nombreUsuario, contraseña);
+
+        if (inicioSesionExitoso) {
+            Usuario usuarioSesion = cuenta.getUsuarioSesion();
+            System.out.println("Inicio de sesión exitoso");
+            DietaGenerator dietaGenerator = new DietaGenerator(usuarioSesion);
+            dietaGenerator.ejecutar();
+        } else {
+            System.out.println("Inicio de sesión fallido");
+        }
+    }
+
+    public static void main(String[] args) {
+        TerminalApp app = new TerminalApp();
+        app.run();
+    }
+}

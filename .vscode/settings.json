@@ -2,6 +2,24 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "c:\\Users\\Usuario\\Downloads\\commons-lang3-3.0.jar",
+        "c:\\Users\\Usuario\\Downloads\\opencsv-5.8.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.base.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.controls.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.media.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.swing.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-20.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.base.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.controls.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.media.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.swing.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\Usuario\\OneDrive\\Documentos\\UVG\\Segundo Semestre\\POO\\javafx-sdk-20.0.2\\lib\\javafx-swt.jar",
+        "c:\\Users\\Usuario\\Downloads\\apache-commons-lang.jar"
     ]
 }
