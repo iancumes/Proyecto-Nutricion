@@ -6,17 +6,49 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+/**
+ * Esta clase gestiona cuentas de usuario, incluyendo el registro e inicio de sesión.
+ * Además, permite cargar y guardar información de usuario en un archivo CSV.
+ * @author Camila Richter 
+ * @version 24-10-23
+ */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
 public class Cuenta {
     private List<Usuario> usuarios;
     private String archivoUsuarios;
     private Usuario usuarioSesion;
 
+<<<<<<< HEAD
+=======
+    /**
+     * Constructor de la clase Cuenta que inicializa la lista de usuarios y carga usuarios desde un archivo CSV.
+     *
+     * @param archivoUsuarios La ubicación del archivo CSV que contiene los datos de los usuarios.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public Cuenta(String archivoUsuarios) {
         this.archivoUsuarios = archivoUsuarios;
         usuarios = new ArrayList<>();
         cargarUsuariosDesdeArchivo();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Registra un nuevo usuario en el sistema.
+     *
+     * @param nombreUsuario El nombre de usuario del nuevo usuario.
+     * @param contraseña La contraseña del nuevo usuario.
+     * @param nombre El nombre del nuevo usuario.
+     * @param edad La edad del nuevo usuario.
+     * @param peso El peso del nuevo usuario.
+     * @param altura La altura del nuevo usuario.
+     * @param objetivo El objetivo del nuevo usuario (bajar, mantener, subir de peso, etc.).
+     * @return true si el registro es exitoso, false si el nombre de usuario ya está en uso.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public boolean registrarUsuario(String nombreUsuario, String contraseña, String nombre, int edad, double peso, double altura, String objetivo) {
         // Verificar si el nombre de usuario ya existe
         for (Usuario usuario : usuarios) {
@@ -31,6 +63,16 @@ public class Cuenta {
         return true;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Inicia sesión para un usuario con un nombre de usuario y una contraseña.
+     *
+     * @param nombreUsuario El nombre de usuario del usuario que intenta iniciar sesión.
+     * @param contraseña La contraseña del usuario que intenta iniciar sesión.
+     * @return true si el inicio de sesión es exitoso, false si el usuario no existe o la contraseña es incorrecta.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public boolean iniciarSesion(String nombreUsuario, String contraseña) {
         for (Usuario usuario : usuarios) {
             if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuario) && usuario.getContraseña().equals(contraseña)) {
@@ -42,13 +84,23 @@ public class Cuenta {
         return false; // Inicio de sesión fallido
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Carga los usuarios desde un archivo CSV.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     private void cargarUsuariosDesdeArchivo() {
         usuarios.clear(); // Limpiar la lista actual para evitar duplicados
 
         try (CSVReader reader = new CSVReader(new FileReader(archivoUsuarios))) {
             String[] linea;
             reader.skip(1); // Saltar la primera línea (encabezados)
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
             while ((linea = reader.readNext()) != null) {
                 if (linea.length == 7) { // Ajustar según el número de columnas esperado
                     String nombreUsuario = linea[0];
@@ -70,21 +122,39 @@ public class Cuenta {
             System.out.println("Error2");
         }
     }
+<<<<<<< HEAD
     
+=======
+
+    /**
+     * Guarda los usuarios en un archivo CSV.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     private void guardarUsuariosEnArchivo() {
         try (CSVWriter writer = new CSVWriter(new FileWriter(archivoUsuarios, true))) {
             File archivoCSV = new File(archivoUsuarios);
             boolean archivoExiste = archivoCSV.exists();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
             // Verifica si el archivo existe y está vacío para agregar encabezados
             if (!archivoExiste || archivoCSV.length() == 0) {
                 String[] encabezadosEsperados = {"Usuario", "Contrasena", "Nombre", "Edad", "Peso", "Altura", "Objetivo"};
                 writer.writeNext(encabezadosEsperados);
             }
+<<<<<<< HEAD
     
             // Obtén el índice del usuario recién registrado
             int indiceNuevoUsuario = usuarios.size() - 1;
     
+=======
+
+            // Obtén el índice del usuario recién registrado
+            int indiceNuevoUsuario = usuarios.size() - 1;
+
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
             if (indiceNuevoUsuario >= 0) {
                 Usuario usuario = usuarios.get(indiceNuevoUsuario);
                 String[] linea = {usuario.getNombreUsuario(), usuario.getContraseña(), usuario.getNombre(),
@@ -97,8 +167,17 @@ public class Cuenta {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD
     
     
+=======
+
+    /**
+     * Obtiene el usuario en sesión.
+     *
+     * @return El usuario en sesión o null si no hay sesión activa.
+     */
+>>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public Usuario getUsuarioSesion() {
         return usuarioSesion;
     }
