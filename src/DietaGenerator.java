@@ -5,40 +5,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-<<<<<<< HEAD
-=======
 /**
  * Esta clase permite generar y consultar dietas para el usuario en función de su objetivo y tipos de alimentos disponibles.
  *
  * @author Javier Valladares
  * @version 24-10-23 1.0.0
  */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
 public class DietaGenerator {
     private Map<String, Map<String, Integer>> alimentosPorTipo;
     private Scanner scanner;
     private Usuario usuarioSesion; // Agregar una referencia al usuario que ha iniciado sesión
 
-<<<<<<< HEAD
-=======
     /**
      * Constructor de la clase DietaGenerator que inicializa las variables y recibe el usuario en sesión.
      *
      * @param usuarioSesion El usuario que ha iniciado sesión y para el cual se generará la dieta.
      */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public DietaGenerator(Usuario usuarioSesion) {
         alimentosPorTipo = new HashMap<>();
         scanner = new Scanner(System.in);
         this.usuarioSesion = usuarioSesion;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Permite al usuario consultar los alimentos disponibles por tipo.
      */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public void consultarAlimentosPorTipo() {
         cargarAlimentosDesdeCSV();
 
@@ -67,12 +58,9 @@ public class DietaGenerator {
         }
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Carga los alimentos disponibles desde un archivo CSV.
      */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     private void cargarAlimentosDesdeCSV() {
         alimentosPorTipo.clear();
 
@@ -94,12 +82,9 @@ public class DietaGenerator {
         }
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Calcula las calorías diarias recomendadas para el usuario según su objetivo.
      */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public void calcularCaloriasDiarias() {
         String objetivo = usuarioSesion.getObjetivo();
         double peso = usuarioSesion.getPeso();
@@ -116,12 +101,9 @@ public class DietaGenerator {
         System.out.println("Según tu objetivo: " + objetivo + ", las calorías que debes consumir son: " + caloriasDiarias + " calorias.");
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Ejecuta el menú de generación de dietas, calculando las calorías diarias y permitiendo consultar alimentos por tipo.
      */
->>>>>>> 5fc7291e1d3f40bd5ce7cdb48aa72467c8196d26
     public void ejecutar() {
         System.out.println("Bienvenido al Generador de Dietas");
 
