@@ -9,6 +9,13 @@
             "name": "TerminalApp",
             "request": "launch",
             "mainClass": "TerminalApp",
+            "projectName": "Proyecto-Nutricion_2d88cd99"
+        },
+        {
+            "type": "java",
+            "name": "TerminalApp",
+            "request": "launch",
+            "mainClass": "TerminalApp",
             "projectName": "Proyecto Nutricion_9daa21a9"
         },
         {
