@@ -38,12 +38,30 @@ public class TerminalApp {
             }
         }
     }
-
     private void registrarUsuario() {
-        // (Implementación del registro de usuario)
-        // ...
-
-        System.out.println("Registro exitoso");
+        System.out.println("Registro de Nuevo Usuario");
+        
+        System.out.print("Nombre de Usuario: ");
+        String nombreUsuario = scanner.nextLine();
+        System.out.print("Contraseña: ");
+        String contraseña = scanner.nextLine();
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Edad: ");
+        int edad = scanner.nextInt();
+        System.out.print("Peso (kg): ");
+        double peso = scanner.nextDouble();
+        System.out.print("Altura (cm): ");
+        double altura = scanner.nextDouble();
+        scanner.nextLine(); // Consumir la nueva línea
+        System.out.print("Objetivo: ");
+        String objetivo = scanner.nextLine();
+        boolean registroSesionExitoso = cuenta.registrarUsuario(nombreUsuario,contraseña,nombre,edad,peso,altura,objetivo);
+         if (registroSesionExitoso) {
+             System.out.println("Registro de Sesion Exitoso");
+        } else {
+            System.out.println("Registro de sesión fallido");
+        }
     }
 
     private void iniciarSesion() {
@@ -69,7 +87,8 @@ public class TerminalApp {
             System.out.println("1. Ver Dietas");
             System.out.println("2. Ver Rutinas");
             System.out.println("3. Ver Horario y Actividades"); // Nueva opción
-            System.out.println("4. Salir al Menú de Inicio de Sesión");
+            System.out.println("4. Ver Progreso"); // Nueva opción
+            System.out.println("5. Salir al Menú de Inicio de Sesión");
             System.out.print("Elija una opción: ");
 
             int opcion = scanner.nextInt();
@@ -88,11 +107,63 @@ public class TerminalApp {
                 // Nueva opción para manejar el horario y actividades
                 manejarHorarioYActividades();
             } else if (opcion == 4) {
+                mostrarMenuProgreso();
+            } 
+            else if (opcion == 5) {
                 return; // Regresar al menú de inicio de sesión
-            } else {
+            }else {
                 System.out.println("Opción no válida. Intente de nuevo.");
             }
         }
+    }
+    private void mostrarMenuProgreso() {
+        System.out.println("Menú de Progreso");
+        while (true) {
+            System.out.println("1. Ver Estado Actual");
+            System.out.println("2. Cambiar Estado");
+            System.out.println("3. Regresar al Menú Principal");
+            System.out.print("Elija una opción: ");
+
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Consumir la nueva línea
+
+            switch (opcion) {
+                case 1:
+                verEstadoActual();
+                    break;
+                case 2:
+                cambiarEstado();
+                    break;
+                case 3:
+                    return; // Regresar al menú principal
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+                    break;
+            }
+        }
+    }
+    private void verEstadoActual() {
+        Usuario usuarioSesion = cuenta.getUsuarioSesion();
+        System.out.println("Estado Actual:");
+        System.out.println("Nombre: " + usuarioSesion.getNombre());
+        System.out.println("Edad: " + usuarioSesion.getEdad());
+        System.out.println("Peso: " + usuarioSesion.getPeso() + " kg");
+        System.out.println("Altura: " + usuarioSesion.getAltura() + " cm");
+        double imc = usuarioSesion.calcularIMC();
+        System.out.println("IMC: " + imc + " - " + usuarioSesion.obtenerEstadoIMC(imc));
+    }
+    private void cambiarEstado() {
+        Usuario usuarioSesion = cuenta.getUsuarioSesion();
+        System.out.println("Cambiar Estado");
+        System.out.print("Nuevo Peso (kg): ");
+        double nuevoPeso = scanner.nextDouble();
+        System.out.print("Nueva Altura (cm): ");
+        double nuevaAltura = scanner.nextDouble();
+        scanner.nextLine(); // Consumir la nueva línea
+       
+        usuarioSesion.cambiarEstado(nuevoPeso, nuevaAltura);
+
+        System.out.println("Cambio de estado exitoso");
     }
     private void manejarHorarioYActividades() {
         Horario horario = new Horario(8, cuenta.getUsuarioSesion().getNombreUsuario());
@@ -132,6 +203,7 @@ public class TerminalApp {
             }
         }
     }
+
 
     public static void main(String[] args) {
         TerminalApp app = new TerminalApp();

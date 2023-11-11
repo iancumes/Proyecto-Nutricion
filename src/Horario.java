@@ -71,7 +71,7 @@ public class Horario {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(",");
-                if (datos.length == 4) { // Ajustar según el número de columnas esperado
+                if (datos.length == 3) { // Ajustar según el número de columnas esperado
                     String nombre = datos[0];
                     int duracion = Integer.parseInt(datos[1]);
                     boolean completada = Boolean.parseBoolean(datos[2]);

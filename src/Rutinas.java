@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -12,7 +14,7 @@ import java.util.Scanner;
  * @version 24-10-23 1.0.0
  */
 public class Rutinas {
-    private Map<String, String> ejerciciosPorObjetivo;
+    private Map<String, List<String>> ejerciciosPorObjetivo;
     private Scanner scanner;
     private String objetivoUsuario;
 
@@ -34,15 +36,13 @@ public class Rutinas {
      * @param objetivoUsuario El objetivo del usuario.
      */
     public void mostrarRutinasSegunObjetivo(String objetivoUsuario) {
-        cargarEjerciciosDesdeCSV();
-    
+        //cargarEjerciciosDesdeCSV();
+
         if (ejerciciosPorObjetivo.containsKey(objetivoUsuario)) {
             System.out.println("Rutinas para el objetivo " + objetivoUsuario + ":");
-    
-            String rutinas = ejerciciosPorObjetivo.get(objetivoUsuario);
-            String[] rutinasArray = rutinas.split(",");
-    
-            for (String rutina : rutinasArray) {
+            
+            List<String> rutinas = ejerciciosPorObjetivo.get(objetivoUsuario);
+            for (String rutina : rutinas) {
                 System.out.println(rutina);
             }
         } else {
@@ -53,7 +53,7 @@ public class Rutinas {
     /**
      * Carga ejercicios desde un archivo CSV y almacena las rutinas en un mapa.
      */
-    private void cargarEjerciciosDesdeCSV() {
+       private void cargarEjerciciosDesdeCSV() {
         try (BufferedReader reader = new BufferedReader(new FileReader("Rutinas.csv"))) {
             String line;
             reader.readLine(); // Leer la primera línea (encabezados) y descartarla
@@ -62,13 +62,23 @@ public class Rutinas {
                 if (parts.length == 2) {
                     String ejercicio = parts[0].trim();
                     String objetivo = parts[1].trim();
-                    ejerciciosPorObjetivo.put(objetivo, ejercicio);
+                    
+                    // Si el objetivo ya está en el mapa, agregamos el ejercicio a la lista existente
+                    if (ejerciciosPorObjetivo.containsKey(objetivo)) {
+                        ejerciciosPorObjetivo.get(objetivo).add(ejercicio);
+                    } else {
+                        // Si no, creamos una nueva lista con el ejercicio y la asociamos al objetivo
+                        List<String> nuevaLista = new ArrayList<>();
+                        nuevaLista.add(ejercicio);
+                        ejerciciosPorObjetivo.put(objetivo, nuevaLista);
+                    }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Ejecuta el menú de rutinas, permitiendo al usuario ver las rutinas disponibles según su objetivo.
