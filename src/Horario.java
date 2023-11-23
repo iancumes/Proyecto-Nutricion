@@ -20,22 +20,34 @@ public class Horario {
     public void definirHoraDeLevantarse(int horaDeLevantarse) {
         this.horaDeLevantarse = horaDeLevantarse;
     }
+    private boolean esActividadEjercicio(String tipo) {
+        // Implementa la lógica para determinar si el nombre indica una actividad de ejercicio
+        return tipo.contains("Ejercicio");
+    }
+    private boolean esActividadEstudio(String tipo) {
+        // Implementa la lógica para determinar si el nombre indica una actividad de ejercicio
+        return tipo.contains("Estudio");
+    }
 
-    public void agregarActividad(String nombre, int duracion) {
+    private boolean esActividadOcio(String tipo) {
+        // Implementa la lógica para determinar si el nombre indica una actividad de ocio
+        return tipo.contains("Ocio");
+    }
+
+    public void agregarActividad(Actividad actividad) {
         // Crear la actividad y agregarla a la lista
-        Actividad actividad = new Actividad(nombre, duracion);
         actividades.add(actividad);
 
         // Guardar actividades en el archivo CSV del usuario
         guardarActividadesEnArchivo();
-        System.out.println("Actividad agregada: " + nombre + " (Duración: " + duracion + " horas)");
+        System.out.println("Actividad agregada: " + "Tipo"+actividad.getTipo()+ "Nombre:" + actividad.getNombre() + " (Duración: " + actividad.getDuracion() + " horas)");
     }
 
     public void mostrarHorario() {
         System.out.println("Tareas del día:");
         for (Actividad actividad : actividades) {
             String estado = actividad.isCompletada() ? "Completada" : "Pendiente";
-            System.out.println(actividad.getNombre() + " (Duración: " + actividad.getDuracion() + " horas, Estado: " + estado + ")");
+            System.out.println("Tipo: "+actividad.getTipo()+"Nombre: "+actividad.getNombre() + " (Duración: " + actividad.getDuracion() + " horas, Estado: " + estado + ")");
         }
     }
 
@@ -43,7 +55,7 @@ public class Horario {
         System.out.println("Tareas Diarias:");
         for (Actividad actividad : actividades) {
             String estado = actividad.isCompletada() ? "Completada" : "Pendiente";
-            System.out.println(actividad.getNombre() + " (Duración: " + actividad.getDuracion() + " horas, Estado: " + estado + ")");
+              System.out.println("Tipo: "+actividad.getTipo()+". -Nombre: "+actividad.getNombre() + " (Duración: " + actividad.getDuracion() + " horas, Estado: " + estado + ")");
         }
     }
 
@@ -66,16 +78,29 @@ public class Horario {
 
     private void cargarActividadesDesdeArchivo() {
         String archivoActividades = usuarioEnSesion + "_actividades.csv";
-
+    
         try (BufferedReader reader = new BufferedReader(new FileReader(archivoActividades))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(",");
-                if (datos.length == 3) { // Ajustar según el número de columnas esperado
-                    String nombre = datos[0];
-                    int duracion = Integer.parseInt(datos[1]);
-                    boolean completada = Boolean.parseBoolean(datos[2]);
-                    Actividad actividad = new Actividad(nombre, duracion, completada);
+                if (datos.length == 4) {
+                    ActividadBase actividad;
+                    String tipo = datos[0];
+                    String nombre = datos[1];
+                    int duracion = Integer.parseInt(datos[2]);
+                    boolean completada = Boolean.parseBoolean(datos[3]);
+                    if (esActividadEjercicio(tipo)) {
+                        actividad = new ActividadEjercicio(tipo, nombre, duracion, completada);
+                    } else if (esActividadOcio(tipo)) {
+                        actividad = new ActividadOcio(tipo, nombre, duracion, completada);
+                        
+                    } else if (esActividadEstudio(tipo)) {
+                        actividad = new ActividadEstudio(tipo, nombre, duracion, completada);
+                        
+                    } else {
+                        throw new IllegalArgumentException("Tipo de actividad desconocido: " + tipo);
+                    }
+    
                     actividades.add(actividad);
                 }
             }
@@ -89,7 +114,7 @@ public class Horario {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoActividades))) {
             for (Actividad actividad : actividades) {
-                String linea = actividad.getNombre() + "," + actividad.getDuracion() + "," + actividad.isCompletada();
+                String linea = actividad.getTipo()+ ","+ actividad.getNombre() + "," + actividad.getDuracion() + "," + actividad.isCompletada();
                 writer.write(linea);
                 writer.newLine();
             }

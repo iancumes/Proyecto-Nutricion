@@ -131,13 +131,15 @@ public class Usuario {
                     double peso = Double.parseDouble(partes[1]);
                     double altura = Double.parseDouble(partes[2]);
                     
-                    // Puedes hacer algo con los datos cargados, por ejemplo, almacenarlos en una lista
-                    // o realizar algún otro tipo de procesamiento según tus necesidades.
+                    System.out.println("Fecha: "+fecha+" Peso: "+peso+" Altura: "+altura);
                 }
             }
         } catch (IOException e) {
             // El archivo aún no existe, lo cual es normal
         }
+    }
+    public List<Progreso> getProgresos() {
+        return progresos;
     }
 
     /**
